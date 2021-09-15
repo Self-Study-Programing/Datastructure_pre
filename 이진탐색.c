@@ -17,12 +17,23 @@ int binarysearch(int s, int e){ // start end
         else 
             e = m +1;
     }
-    return -1; // 결국 숫자를 못찾음
+    return count; // 결국 숫자를 못찾음
 }
 
 int main(){
     printf("찾을ㄹ 숫자 입력 : ");
     scanf("%d", &k);
+    int i=0;
+    int j=10;
+    for(;;){
+        if(j==0)
+            break;
+        j/=2;
+        i++;
+    }
+    if(binarysearch(0, 10) == i){
+        printf("%d번째에서 찾지 못함\n", binarysearch(0, 10));
+    }
     printf("%d번째에서 발견\n", binarysearch(0, 10));
     return 0;
 }
